@@ -1,7 +1,7 @@
 extern crate base64;
 
+use std::env;
 use base64::encode;
-use std::{env, process};
 use hash::merhash::mersenne_hash;
 
 /// 密码子 (长度 100)
@@ -53,12 +53,12 @@ fn hash_password(seed: &String, length: usize) -> String {
     passwd
 }
 
-fn main() {
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args = env::args().collect::<Vec<_>>();
     if args.len() < 2 {
         let paths: Vec<&str> = args[0].split('/').collect();
-        println!("Usage: {} seed [16]", paths[paths.len()-1]);
-        process::exit(-1);
+        let log_info = format!("Usage: {} seed [length]", paths[paths.len()-1]);
+        Err(log_info)?;
     } 
 
     let (seed, length) = if args.len() == 2 {
@@ -68,11 +68,13 @@ fn main() {
     };
 
     if seed.len() < 4 {
-        println!("Error: seed = {} length less than 4", seed);
-        process::exit(-1);
+        let log_info = format!("Error: seed = {}, its length less than 4", seed);
+        Err(log_info)?;
     }
 
     let mut passwd = String::new();
     passwd = hash_password(seed, length);
     println!("{}",passwd);
+
+    Ok(())
 }
