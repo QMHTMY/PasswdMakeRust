@@ -12,7 +12,7 @@
 [source, shell]
 .bash
 ----
-    $ cargo run seed [length=16] # default password length is 16
+    $ cargo run seed [length=16] # 密码默认长度 16
     $ cargo run jdxjp 
     $ cargo run qqxjp 18 
     $ cargo run wechatxjp 
@@ -25,8 +25,8 @@
 .bash
 -----
     $ cargo build --release
-    $ sudo cp target/release/main /usr/local/bin/PassswdMakeRust
-    $ PasswdMake seed #命令行直接生成密码，省去用法1中冗长语法
+    $ sudo cp target/release/main /usr/local/bin/PasswdMakeRust
+    $ PasswdMakeRust seed #命令行直接生成密码，省去用法1中冗长语法
 -----
 
 ### 两种用法示例，左侧为输入的 seed，右侧为密码，可见，密码非常丰富，极难重复
@@ -35,12 +35,14 @@ image::./passwdmake.png[passwordmake.png]
 
 image::./passwdmakeshell.png[passwordmakeshell.png]
 
-这么长和复杂的密码如何保存？使用pass工具，安装如下。用pass保存PasswdMake生成的密码，以后要用时，再用pass输出密码，用pass -c account 还可保存密码到剪切板以直接粘贴到登录框。
+这么长和复杂的密码如何保存？使用 pass 工具，安装如下。
 
 [source, shell]
 .bash
 -----
     $ sudo apt install pass
 -----
+
+用 pass 保存 PasswdMake 生成的密码，以后要用时，再用 pass 输出密码，用 pass -c account 还可保存密码到剪切板（只保存45秒）以直接粘贴到登录框。
 
 image::./savepasswd.gif[savepasswd]

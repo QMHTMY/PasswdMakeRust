@@ -23,8 +23,11 @@
 .bash
 -----
     $ cargo build --release
-    $ sudo cp target/release/main /usr/local/bin/PassswdMakeRust
-    $ PasswdMake seed
+    $ sudo cp target/release/main /usr/local/bin/PasswdMakeRust
+    $ PasswdMakeRust jdxjp
+    $ PasswdMakeRust qqxjp 18
+    $ PasswdMakeRust wechatxjp 
+    $ PasswdMakeRust wechatxjp 21
 -----
 
 ### Example
