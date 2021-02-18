@@ -8,4 +8,6 @@ edition = "2018"
 
 [dependencies]
 base64 = "0.13.0"
+anyhow = "1.0.38"
+structopt = "0.3.21"
 hash = { path = "../hash" }
