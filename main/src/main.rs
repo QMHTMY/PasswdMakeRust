@@ -29,6 +29,10 @@ const CRYPTO:&str = "!pqHr$*+STKU1%Vst_uv:w{WSX&YZ-/01_2.34<ABECo|x#yDE^FG?HEI[]
 /// ```
 fn hash_password(seed: &String, length: usize) -> String {
     // 判断秘密长度并决定哈希值的次方数 p
+    if length < 6 {
+        bail!("length must be >= 6"); 
+    }
+
     let p = match length {
         6..=10 => 1,
         11..=15 => 2,
