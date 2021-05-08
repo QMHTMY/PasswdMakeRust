@@ -31,8 +31,6 @@ fn make_password(seed: String, length: usize) -> Result<String, Error> {
         16..=20 => 3,
         _ => 3,
     };
-    let keed = String::from("jdxjp");
-    println!("{}", mersenne_hash(&keed));
     let mut mer_hash = mersenne_hash(&seed).pow(p);
 
     // 由 mer_hash 计算 passwd
@@ -84,8 +82,8 @@ fn main() -> Result<()> {
     let (seed, length) = (args.seed, args.length);
     let passwd = make_password(seed, length);
     match passwd {
-        Ok(val) => println!("{:#?}", val),
-        Err(err) => println!("{:#?}", err),
+        Ok(val) => println!("{}", val),
+        Err(err) => println!("{}", err),
     }
 
     Ok(())
