@@ -25,13 +25,11 @@
 .bash
 -----
     $ cargo build --release
-    $ sudo cp target/release/main /usr/local/bin/PasswdMakeRust
-    $ PasswdMakeRust seed #命令行直接生成密码，省去用法1中冗长语法
+    $ sudo cp target/release/main /usr/local/bin/PasswdMake
+    $ PasswdMake seed #命令行直接生成密码，省去用法1中冗长语法
 -----
 
 ### 两种用法示例，左侧为输入的 seed，右侧为密码，可见，密码非常丰富，极难重复
-
-image::./passwdmake.png[passwordmake.png]
 
 image::./passwdmakeshell.png[passwordmakeshell.png]
 

@@ -23,16 +23,14 @@
 .bash
 -----
     $ cargo build --release
-    $ sudo cp target/release/main /usr/local/bin/PasswdMakeRust
-    $ PasswdMakeRust jdxjp
-    $ PasswdMakeRust qqxjp 18
-    $ PasswdMakeRust wechatxjp 
-    $ PasswdMakeRust wechatxjp 21
+    $ sudo cp target/release/main /usr/local/bin/PasswdMake
+    $ PasswdMake jdxjp
+    $ PasswdMake qqxjp 18
+    $ PasswdMake wechatxjp 
+    $ PasswdMake wechatxjp 21
 -----
 
 ### Example
-
-image::./passwdmake.png[passwordmk.png]
 
 image::./passwdmakeshell.png[passwordmsh.png]
 
