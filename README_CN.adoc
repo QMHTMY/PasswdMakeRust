@@ -12,8 +12,14 @@
 [source, shell]
 .bash
 -----
-    $ cargo build --release
-    $ sudo cp target/release/main /usr/local/bin/PasswdMake
+    $ # 1. 直接拷贝编译好的文件到合适的位置
+    $ sudo cp release/PasswdMake /usr/local/bin/PasswdMake
+    $
+    $ # 2. [可选项] 自己编译并拷贝到合适位置
+    $ # cargo build --release 
+    $ # sudo cp target/release/main /usr/local/bin/PasswdMake
+    $
+    $ # 3. 使用 PasswdMake 为任何账号生成密码
     $ PasswdMake --seed qqxxw         # 密码默认长度 16
     $ PasswdMake --seed jdxxw --len 20
     $ PasswdMake -s wechatxxw         # --seed 短写 -s  --len 短写 -l

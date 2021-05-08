@@ -10,8 +10,14 @@
 [source, shell]
 .bash
 -----
-    $ cargo build --release
-    $ sudo cp target/release/main /usr/local/bin/PasswdMake
+    $ # 1. copy runnable file to a dir
+    $ sudo cp release/PasswdMake /usr/local/bin/PasswdMake
+    $
+    $ # 2. [optional] if you like compile, do it and cp to a dir
+    $ # cargo build --release 
+    $ # sudo cp target/release/main /usr/local/bin/PasswdMake
+    $
+    $ # 3. use PasswdMake to generate password for any account
     $ PasswdMake --seed qqxxw # default len is 16
     $ PasswdMake --seed jdxxw --len 20
     $ PasswdMake -s wechatxxw # --seed equals -s, --len equals -l
