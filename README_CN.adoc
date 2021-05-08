@@ -5,8 +5,6 @@
 
 ##### [link:README.adoc[English]] 输入各种账号的 seed 以生成密码，seed 可以是账户种类加姓名或数字等。
 
-此为 Rust 语言版，还有 Python 和 Go 版。Python 脚本能被打开，不安全，go 和 rust 可执行文件不用考虑安全问题。
-
 ### 用法 [添加 target/release/main 到 /usr/local/bin]
 
 [source, shell]
