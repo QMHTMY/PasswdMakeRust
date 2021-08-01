@@ -1,4 +1,4 @@
-//! base58 编码 
+//! base58 编码
 // base58 的改进版也是比特币中使用的一种编码，用于生成钱包地址
 
 ///将 base64 中易错字符[0 O I l + /]剔除，剩下编码字符 58 个
@@ -32,12 +32,12 @@ pub trait Decoder {
 }
 
 impl Encoder for str {
-    /// 将 str/String 编码为 base58 
+    /// 将 str/String 编码为 base58
     ///
     /// # Example
     /// ```
     /// use encoder::base58::Encoder;
-    /// 
+    ///
     /// let src = "abc";
     /// let des = "ZiCa";
     /// assert_eq!(des, src.encode());
@@ -75,7 +75,7 @@ impl Encoder for str {
             j += 1;
         }
 
-        base58_str    
+        base58_str
     }
 }
 
@@ -85,7 +85,7 @@ impl Decoder for str {
     /// # Example
     /// ```
     /// use encoder::base58::Decoder;
-    /// 
+    ///
     /// let src = "7T5VrPqoBr9DeUXiUr2Fn";
     /// let des = "我爱你iloveu";
     /// assert_eq!(des, src.decode().unwrap());

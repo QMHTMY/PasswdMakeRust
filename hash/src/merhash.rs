@@ -6,7 +6,7 @@
 /// ```
 /// use hash::merhash::mersenne_hash;
 ///
-/// let seed = "jdxjp".to_string(); 
+/// let seed = "jdxjp".to_string();
 /// let hash = mersenne_hash(&seed);
 /// assert_eq!(2000375, hash);
 /// ```
