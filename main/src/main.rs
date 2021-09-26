@@ -19,7 +19,7 @@ fn main() -> Result<()> {
     }
 
     let (seed, length) = (args.seed, args.length);
-    let passwd = generate_password(seed, length);
+    let passwd = generate_password(&seed[..], length);
     match passwd {
         Ok(val) => println!("{}", val),
         Err(err) => println!("{}", err),
