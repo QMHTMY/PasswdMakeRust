@@ -12,7 +12,7 @@ const CRYPTO: &str = "!pqHr$*+STKU1%Vst_uv:w{WSX&YZ-/01_2.34<ABECo|x#yDE^FG?HEI[
 /// use encryptor::password::generate_password;
 /// let seed = "jdwnp";
 /// let length = 16;
-/// let passwd = make_password(seed, length);
+/// let passwd = generate_password(seed, length);
 /// match passwd {
 ///     Ok(val) => println!("{:#?}", val),
 ///     Err(err) => println!("{:#?}", err),
