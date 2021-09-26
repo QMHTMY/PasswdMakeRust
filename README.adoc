@@ -5,7 +5,7 @@
 
 ##### [link:README_CN.adoc[中文]] Make a password for any account via a seed.
 
-### Usage [Add `release/main` to `/usr/local/bin`]
+### Usage [Add `release/PasswdMake` to `/usr/local/bin`]
 
 [source, shell]
 .bash
