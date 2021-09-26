@@ -6,11 +6,11 @@
 /// ```
 /// use hash::merhash::mersenne_hash;
 ///
-/// let seed = "jdxjp".to_string();
+/// let seed = "jdxjp";
 /// let hash = mersenne_hash(&seed);
 /// assert_eq!(2000375, hash);
 /// ```
-pub fn mersenne_hash(seed: &String) -> usize {
+pub fn mersenne_hash(seed: &str) -> usize {
     let mut hash: usize = 0;
 
     for (i, c) in seed.chars().enumerate() {
