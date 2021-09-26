@@ -9,7 +9,8 @@ const CRYPTO: &str = "!pqHr$*+STKU1%Vst_uv:w{WSX&YZ-/01_2.34<ABECo|x#yDE^FG?HEI[
 ///
 /// #Example
 /// ```
-/// let seed = String::from("jdwnp");
+/// use encryptor::password::generate_password;
+/// let seed = "jdwnp";
 /// let length = 16;
 /// let passwd = make_password(seed, length);
 /// match passwd {
@@ -17,7 +18,7 @@ const CRYPTO: &str = "!pqHr$*+STKU1%Vst_uv:w{WSX&YZ-/01_2.34<ABECo|x#yDE^FG?HEI[
 ///     Err(err) => println!("{:#?}", err),
 /// }
 /// ```
-pub fn generate_password(seed: String, length: usize) -> Result<String, Error> {
+pub fn generate_password(seed: &str, length: usize) -> Result<String, Error> {
     // 判断秘密长度
     if length < 6 {
         bail!("length must >= 6");
@@ -30,7 +31,7 @@ pub fn generate_password(seed: String, length: usize) -> Result<String, Error> {
         16..=20 => 3,
         _ => 3,
     };
-    let mut mer_hash = mersenne_hash(&seed).pow(p);
+    let mut mer_hash = mersenne_hash(seed).pow(p);
 
     // 由 mer_hash 计算 passwd
     let mut passwd = String::new();
