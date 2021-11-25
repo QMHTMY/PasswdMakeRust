@@ -38,7 +38,7 @@ pub fn generate_password(seed: &str, length: usize) -> Result<String, Error> {
     let crypto_len = CRYPTO.len();
     while mer_hash > 9 {
         let loc = mer_hash % crypto_len;
-        let nthc = CRYPTO.chars().nth(loc).unwrap();
+        let nthc = CRYPTO.chars().nth(loc).expect("Error while getting char!");
         passwd.push(nthc);
         mer_hash = mer_hash / crypto_len;
     }
